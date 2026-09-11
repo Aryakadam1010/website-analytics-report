@@ -1,42 +1,42 @@
 # Website Analytics & Conversion Optimization
-### Python | SQL | Pandas | Power BI | Excel
+### Python | SQL | Pandas | Excel | Data Analytics
 
 **Author:** Arya Vilas Kadam  
 **Target Role:** EY Consulting – Technology Analyst Portfolio  
-**Domain:** Data Analytics & Performance Reporting  
+**Domain:** Technology Consulting / Data Analytics  
 
 ```
-Business Problem  ➔  Basic SQL Analysis  ➔  Python/Pandas  ➔  Power BI Dashboard  ➔  Business Recommendations
+Raw Website Data  ➔  SQL Analysis  ➔  Python/Pandas Analysis  ➔  KPI Report  ➔  Business Insights  ➔  Recommendations
 ```
 
 ---
 
 ## Overview
 
-This project demonstrates an end-to-end consulting analytics workflow for an online wellness clinic case study, analyzing patient acquisition channels, user engagement, and appointment booking conversions across a 24-month period (**38,181 sessions**).
+This project is a technology and data analytics consulting case study analyzing digital patient acquisition, traffic channel effectiveness, user engagement, and appointment booking conversions across a 24-month period (**38,181 sessions**).
 
-By connecting **basic SQL queries**, an automated **Python/Pandas data pipeline**, and a single-page **Power BI executive dashboard**, raw session logs are transformed into clear, actionable business recommendations for leadership.
+Following a standard technology consulting framework, raw website session logs are queried with **basic SQL**, validated and aggregated using a concise **Python/Pandas pipeline**, summarized in **Excel**, and synthesized into data-backed executive insights and practical recommendations.
 
 ---
 
 ## Business Problem
 
-The clinic's management lacked visibility into their digital patient acquisition funnel:
-1. **Traffic Channel Efficacy**: Which marketing channels drove traffic, and which actually produced paying appointment bookings?
+The clinic's management lacked clear quantitative visibility into their digital patient acquisition funnel:
+1. **Traffic Channel Efficacy**: Which marketing sources drove visits, and which actually produced paying appointment bookings?
 2. **User Drop-Off**: Why were visitors leaving the website without completing bookings?
-3. **Device Behavioral Differences**: How did user engagement differ between mobile and desktop visitors?
+3. **Device Behavioral Differences**: How did user engagement and conversion rates differ between mobile and desktop visitors?
 4. **Growth Trajectory**: How were session volumes and appointment bookings evolving over time?
 
 ---
 
 ## Business Questions
 
-This project answers five fundamental consulting questions:
+This project answers five core consulting questions:
 - **Which acquisition channels generate the most traffic?**
 - **Which channels have the highest conversion rates?**
-- **Which device type performs better?**
-- **Where are the main conversion bottlenecks?**
-- **What actions could improve website conversion?**
+- **How does website performance differ across devices?**
+- **Are there any noticeable monthly trends?**
+- **Where are the major opportunities for improving conversion?**
 
 ---
 
@@ -45,13 +45,13 @@ This project answers five fundamental consulting questions:
 - **Source:** Synthetic Google Analytics web session logs modeled on wellness clinic traffic patterns.
 - **Volume:** **38,181 session records** spanning June 2022 to May 2024 (24 months).
 - **Key Attributes:**
-  - `session_id`: Unique identifier for each visit
-  - `date`, `year_month`: Timestamp attributes
-  - `traffic_source`: Acquisition channel (`Organic Search`, `Direct`, `Social Media`, `Paid Search`, `Email Campaign`, `Referral`)
-  - `device`: Hardware platform (`Mobile`, `Desktop`, `Tablet`)
-  - `pages_viewed`: Number of pages visited in the session
-  - `session_duration_s`: Engagement time in seconds
-  - `bounced`: Boolean flag (`True` if user exited after viewing only 1 page)
+  - `session_id`: Unique identifier for each session
+  - `date`, `year_month`: Timestamps for trend analysis
+  - `traffic_source`: Marketing channel (`Organic Search`, `Direct`, `Social Media`, `Paid Search`, `Email Campaign`, `Referral`)
+  - `device`: User platform (`Mobile`, `Desktop`, `Tablet`)
+  - `pages_viewed`: Pages browsed per visit
+  - `session_duration_s`: Visit duration in seconds
+  - `bounced`: Boolean flag (`True` if user exited after 1 page)
   - `converted`: Boolean flag (`True` if session completed an appointment booking)
 
 ---
@@ -60,22 +60,21 @@ This project answers five fundamental consulting questions:
 
 | Tool / Technology | Purpose in This Project |
 |---|---|
-| **Python (Pandas, NumPy)** | Automated data ingestion, data quality validation, and KPI calculations |
-| **SQL** | Core business queries, multi-dimensional aggregations, and rate metrics |
-| **Microsoft Power BI** | Single-page executive dashboard, KPI cards, and trend visualization |
-| **Excel / CSV** | Structured intermediate storage and tabular validation |
+| **SQL** | Core business queries, multi-dimensional grouping, and rate calculations |
+| **Python (Pandas)** | Automated data ingestion, data quality validation, KPI computation, and exports |
+| **Microsoft Excel / CSV** | Executive KPI summary sheet (`data/executive_summary.xlsx`) and tabular storage |
 
 ---
 
 ## Methodology
 
-This project follows a 5-stage technology consulting methodology:
+This project follows a 5-step consulting delivery workflow:
 
-1. **Raw Data Ingestion & Quality Check**: Validated 38,181 records in Python; confirmed 0 missing values and 0 duplicate sessions.
-2. **Basic SQL Exploratory Analysis**: Authored modular SQL queries (`sql/`) answering business questions using `SELECT`, `GROUP BY`, `ORDER BY`, `COUNT`, `SUM`, `AVG`, and `CASE WHEN`.
-3. **Python/Pandas Automation**: Built a lightweight script (`python/generate_and_analyse.py`) executing 4 core aggregations and exporting CSV summaries in under **0.1 seconds**.
-4. **Power BI Executive Dashboard**: Visualized KPIs, channel rankings, device shares, and 24-month trends on a single executive page.
-5. **Insights & Recommendations**: Formulated structured business recommendations directly supported by empirical data.
+1. **Raw Data Ingestion & Quality Validation**: Ingested 38,181 session records in Python; verified zero missing values and zero duplicate records.
+2. **Basic SQL Analysis**: Authored 4 clean, modular SQL queries (`sql/`) using fundamental SQL syntax (`SELECT`, `WHERE`, `GROUP BY`, `ORDER BY`, `COUNT`, `SUM`, `AVG`, `CASE WHEN`).
+3. **Python/Pandas Automation**: Built a lightweight, readable script (`python/generate_and_analyse.py`, < 100 lines) to automate aggregations and export reports in **0.06 seconds**.
+4. **KPI Reporting & Excel Summary**: Generated high-level KPI tables and an executive summary spreadsheet for stakeholders.
+5. **Insights & Recommendations**: Translated analytical findings into structured consulting recommendations directly supported by data.
 
 ---
 
@@ -83,68 +82,52 @@ This project follows a 5-stage technology consulting methodology:
 
 | KPI | Metric Value | Business Meaning |
 |---|---|---|
-| **Total Sessions** | **38,181** | Total website visits over the 24-month period |
+| **Total Sessions** | **38,181** | Total digital visits over 24 months |
 | **Total Conversions** | **1,220** | Confirmed online appointment bookings |
-| **Conversion Rate** | **3.20%** | Percentage of visits that completed a booking |
-| **Bounce Rate** | **39.8%** | Percentage of single-page visits without interaction |
-| **Avg Session Duration** | **2.9 mins** | Average visitor time on site |
-
----
-
-## Dashboard
-
-Single-page Power BI executive dashboard built to present high-level metrics to stakeholders:
-
-![Website Analytics & Conversion Optimization Dashboard](dashboard/dashboard_screenshot.png)
-
-### Dashboard Visuals:
-- **Top KPI Cards**: Total Sessions (38,181), Total Conversions (1,220), Conversion Rate (3.20%), Bounce Rate (39.8%).
-- **Sessions by Channel**: Horizontal bar chart identifying Organic Search (14.4k) and Direct (8.6k) as volume leaders.
-- **Conversion Rate by Channel**: Highlighting Email Campaign as top converter at **6.2%**.
-- **Sessions by Device**: Donut chart showing Mobile (48%), Desktop (45%), and Tablet (7%).
-- **Conversion Rate by Device**: Bar chart comparing Mobile (3.0%), Desktop (3.4%), and Tablet (3.5%).
-- **Monthly Traffic & Conversions Trend**: Line chart tracking 24-month steady growth from ~1,200 to 2,054 sessions/month.
+| **Overall Conversion Rate** | **3.20%** | Percentage of visits resulting in a booking |
+| **Overall Bounce Rate** | **39.8%** | Percentage of single-page visits without interaction |
+| **Average Session Duration** | **2.9 mins** | Average visitor engagement time |
 
 ---
 
 ## Executive Insights
 
-Every insight pairs an empirical finding with its business implication:
+Every insight pairs an empirical finding with its business impact:
 
-- **Insight 1: Organic Search is the Primary Volume Driver**  
-  - *Finding:* Organic Search generated **38% of total traffic** (14,402 sessions) with a steady **3.3% conversion rate** (475 bookings).  
-  - *Implication:* Search visibility represents the clinic's largest patient acquisition channel, requiring sustained SEO investment.
+- **Insight 1: Organic Search Drives Primary Traffic Volume**  
+  - *Finding:* Organic Search accounts for **38% of total traffic** (14,402 sessions) with a steady **3.3% conversion rate** (475 bookings).  
+  - *Business Impact:* Search visibility is the clinic's largest patient acquisition channel, making sustained search engine optimization essential for baseline demand.
 
-- **Insight 2: Email Campaigns Deliver the Highest Conversion Intent**  
-  - *Finding:* Email Campaigns achieved the highest conversion rate across all sources at **6.2%**, despite accounting for only **6% of total sessions** (2,270 visits).  
-  - *Implication:* Email reaches high-intent prospects and represents the most cost-effective channel for expanding booking volume.
+- **Insight 2: Email Campaigns Deliver the Highest Conversion Efficiency**  
+  - *Finding:* Email Campaigns achieved the highest conversion rate across all sources at **6.2%**, despite representing only **6% of total sessions** (2,270 visits).  
+  - *Business Impact:* This suggests that higher-intent traffic from email may be significantly more effective for generating conversions, making it the highest-ROI channel to scale.
 
 - **Insight 3: Social Media Suffers from High Drop-Off and Low Conversion**  
-  - *Finding:* Social Media drove 6,748 sessions (18% of traffic) but converted at only **1.1%**, while suffering the highest bounce rate across all channels at **53%**.  
-  - *Implication:* Broad social media marketing attracts casual browsers rather than qualified healthcare leads; current ad spend on social may be underperforming.
+  - *Finding:* Social Media drove 6,748 sessions (18% of traffic) but converted at only **1.1%**, while exhibiting the highest bounce rate across all channels at **53%**.  
+  - *Business Impact:* Current social media visitors behave as casual browsers rather than qualified healthcare leads; current ad spend on social may be underperforming.
 
-- **Insight 4: Mobile Traffic Lags in Conversion Efficiency**  
+- **Insight 4: Mobile Traffic Lags in Conversion Performance**  
   - *Finding:* Mobile accounts for **48% of total visits** (18,453 sessions) but converts at **3.0%**, trailing Desktop at **3.4%**.  
-  - *Implication:* Because nearly half of all visitors arrive on smartphones, even minor friction in the mobile booking form directly impacts appointment numbers.
+  - *Business Impact:* Because nearly half of all visitors arrive on mobile devices, even minor friction in the mobile booking flow translates into noticeable lost appointment revenue.
 
 - **Insight 5: Consistent Long-Term Growth Trajectory**  
-  - *Finding:* Monthly sessions climbed steadily from ~1,200/month in June 2022 to **2,054/month** in May 2024 (~3% compounding monthly growth).  
-  - *Implication:* Clinic brand awareness is consistently expanding, providing a solid baseline for conversion optimization.
+  - *Finding:* Monthly sessions increased steadily from ~1,200/month in June 2022 to **2,054/month** in May 2024 (~3% compounding monthly growth).  
+  - *Business Impact:* Overall clinic demand and brand awareness are expanding, providing a stable foundation for conversion rate optimization.
 
 ---
 
 ## Business Recommendations
 
-Based on empirical data findings, four practical recommendations are proposed:
+Based strictly on the empirical data, four practical recommendations are proposed:
 
-1. **Increase Focus on High-Converting Acquisition Channels**:  
-   Scale email marketing frequency and introduce personalized appointment reminders to capitalize on the channel's **6.2% conversion rate**.
+1. **Focus More on High-Converting Acquisition Channels**:  
+   Increase email campaign cadence and introduce targeted appointment reminders to capitalize on the channel's **6.2% conversion rate**.
 2. **Investigate and Streamline Mobile User Experience**:  
-   Audit the mobile booking flow to reduce form friction and close the 0.4% conversion gap between mobile and desktop visitors.
-3. **Review Underperforming Traffic Sources**:  
-   Refine social media campaign targeting toward intent-driven healthcare demographics rather than broad awareness to decrease the 53% bounce rate.
+   Audit the mobile booking flow to reduce form friction, simplify steps, and close the 0.4% conversion gap with desktop visitors.
+3. **Review Traffic Sources with High Sessions but Low Conversion**:  
+   Refine social media targeting toward intent-driven healthcare demographics rather than broad awareness to address the 53% bounce rate.
 4. **Prioritize Channel Optimization Over Raw Volume**:  
-   The analysis identifies concrete opportunities to improve conversion through channel optimization and user-experience improvements rather than solely increasing top-of-funnel marketing spend.
+   The analysis identifies opportunities to improve website conversion through channel optimization and user-experience improvements rather than solely increasing top-of-funnel marketing spend.
 
 ---
 
@@ -155,24 +138,21 @@ website-analytics-report/
 │
 ├── data/
 │   ├── website_sessions.csv            # Raw session logs (38,181 records)
-│   ├── traffic_source_analysis.csv     # Channel performance summary
-│   ├── device_breakdown.csv            # Device share & conversion summary
-│   └── monthly_performance.csv         # 24-month trend aggregation
+│   ├── executive_summary.xlsx          # Executive KPI summary spreadsheet
+│   ├── traffic_source_analysis.csv     # Traffic source performance breakdown
+│   ├── device_breakdown.csv            # Device usage analysis (Mobile vs Desktop vs Tablet)
+│   └── monthly_performance.csv         # Month-by-month KPI trends
 │
 ├── sql/
-│   ├── 01_overall_kpis.sql             # SQL: High-level KPI calculation
-│   ├── 02_channel_performance.sql      # SQL: Traffic sources breakdown
-│   ├── 03_device_analysis.sql          # SQL: Device volume and conversion share
-│   └── 04_monthly_trends.sql           # SQL: Month-over-month performance trends
+│   ├── 01_overall_kpis.sql             # SQL: Total sessions, conversions, rates
+│   ├── 02_channel_performance.sql      # SQL: Traffic source volume and conversions
+│   ├── 03_device_analysis.sql          # SQL: Device volume and conversion comparison
+│   └── 04_monthly_trends.sql           # SQL: Monthly trend aggregation
 │
 ├── python/
-│   └── generate_and_analyse.py         # Automated data validation & analysis pipeline
+│   └── generate_and_analyse.py         # Automated data validation & reporting script
 │
-├── dashboard/
-│   ├── dashboard_screenshot.png        # Power BI executive dashboard visual
-│   └── README.md                       # Power BI visual layout & DAX measures guide
-│
-├── README.md                           # Main consulting documentation
+├── README.md                           # Consulting case study documentation
 └── .gitignore                          # Excludes Python bytecode and OS files
 ```
 
@@ -184,24 +164,24 @@ website-analytics-report/
 Requires Python 3.8+ and Pandas:
 ```bash
 # Install dependency
-pip install pandas
+pip install pandas openpyxl
 
 # Run the automated pipeline from the repository root
 python3 python/generate_and_analyse.py
 ```
-*Validates data quality, prints all 4 analyses in under 0.1s, and exports summary CSVs to `data/`.*
+*Validates data quality, prints all 4 analyses in under 0.1s, and exports summary CSVs and an Excel sheet to `data/`.*
 
 ### 2. SQL Analysis
-The SQL scripts in `sql/` can be executed against any standard SQL database (PostgreSQL, MySQL, SQLite, Snowflake, BigQuery) containing the `website_sessions` table:
+The SQL scripts in `sql/` can be executed against any standard SQL database (PostgreSQL, MySQL, SQLite, Snowflake) containing the `website_sessions` table:
 - Run `sql/01_overall_kpis.sql` for overall totals.
 - Run `sql/02_channel_performance.sql` for acquisition channel metrics.
-- Run `sql/03_device_analysis.sql` for device performance.
-- Run `sql/04_monthly_trends.sql` for month-over-month trends.
+- Run `sql/03_device_analysis.sql` for mobile vs. desktop comparison.
+- Run `sql/04_monthly_trends.sql` for time-series analysis.
 
 ---
 
-## Future Improvements
+## Future Scope
 
-- **Automated Ingestion Pipeline**: Connect the Python script directly to Google Analytics 4 (GA4) API to automate daily data extraction.
-- **A/B Testing Framework**: Conduct statistical hypothesis testing on mobile checkout redesign variants.
-- **Automated BI Refresh**: Publish the dashboard to Power BI Service with scheduled automated data refreshes via On-Premises Data Gateway.
+- **Power BI Executive Dashboard**: Develop an interactive Power BI dashboard to provide executive-level visualization of traffic, engagement, conversion, channel performance, device performance, and monthly trends.
+- **Automated Data Ingestion**: Connect the Python script directly to the Google Analytics 4 (GA4) API to automate daily data extraction.
+- **A/B Testing Framework**: Implement statistical hypothesis testing on mobile checkout redesign variants.
