@@ -3,7 +3,6 @@
 **Author:** Arya Vilas Kadam  
 **Tools:** Python (Pandas, NumPy) · Power BI · Excel  
 **Domain:** Data Analytics  
-**Client:** Avissa Wellness Clinic (Case Study)  
 
 ---
 
