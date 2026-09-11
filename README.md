@@ -3,7 +3,7 @@
 
 **Author:** Arya Vilas Kadam  
 **Target Role:** EY Consulting – Technology Analyst Portfolio  
-**Domain:** Technology Consulting / Data Analytics  
+**Domain:** Data Analytics  
 
 ```
 Raw Website Data  ➔  SQL Analysis  ➔  Python/Pandas Analysis  ➔  KPI Report  ➔  Business Insights  ➔  Recommendations
